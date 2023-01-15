@@ -2,9 +2,10 @@ import React, { useEffect, useTransition } from "react";
 import { useTranslation } from 'react-i18next';
 import { RouterProvider } from "react-router-dom";
 import { router } from "../router/router";
-import initLang from "../lib/lang/lang";
-import reportWebVitals from "../lib/reportWebVitals";
+
+import reportWebVitals from "./../lib/reportWebVitals";
 import i18next from 'i18next';
+import { initLang } from "./../lib/lang/langManager";
 
 /*
 export function Translate() {

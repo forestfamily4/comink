@@ -1,18 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import { router } from "./router/router";
 import reportWebVitals from "./lib/reportWebVitals";
-import initLang from "./lib/lang/lang";
+import { initLang } from "./lib/lang/langManager";
+import { router } from "./router/router";
 
-initLang("ja");
+initLang("ja")
 
-ReactDOM.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
-
+const container = document.getElementById("root");
+const root = createRoot(container!);
+root.render(<RouterProvider router={router} />);
 reportWebVitals(console.log);
-

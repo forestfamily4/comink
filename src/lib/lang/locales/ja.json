@@ -1,5 +1,7 @@
 {
-    "home":{
-        "hello":"こんにちは"
+    "translation":{
+        "title":{
+            "hello":"はろー！!"
+        }
     }
 }

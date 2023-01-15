@@ -1,8 +1,7 @@
-import enjson from './en.json'
-import jajson from './ja.json';
+import en from './en.json'
+import ja from './ja.json';
 
 const locales= {
-    en:{enjson},
-    ja:{jajson}
+    en,ja
 }
 export default locales;

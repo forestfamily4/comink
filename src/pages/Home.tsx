@@ -2,9 +2,9 @@ import { useTranslation } from "react-i18next";
 export default function Home() {
   const { t } = useTranslation();
   return (
-    <body>
+    <div> 
         <h1>ComInk</h1>
-        <p>{t("home.hello")}</p>
-    </body>
+        <p>{t("title.hello")}</p>
+    </div>
   )
 }
