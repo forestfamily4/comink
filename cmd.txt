@@ -1,0 +1,2 @@
+yarn compile src/lib/lang/en.json --ast --out-file src/lib/lang/en-c.json
+yarn extract 'src/**/*.ts*' --out-file src/lib/lang/en.json
