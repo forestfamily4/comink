@@ -9,6 +9,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <IntlProvider messages={encompile} locale="en" defaultLocale="en">
       <Component {...pageProps} />
-    </IntlProvider>
+    </IntlProvider> 
   )
 }
