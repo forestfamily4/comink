@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <div>
-      <h1>ComInk</h1>
+      <h1>ComInk!</h1>
       <p><FormattedMessage id="home.hello" defaultMessage="こんにちは"></FormattedMessage></p>
     </div>
   )
