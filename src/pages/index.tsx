@@ -11,7 +11,7 @@ export default function Home() {
     <div>
       <h1>ComInk!</h1>
       <p><FormattedMessage id="home.hello" defaultMessage="こんにちは"></FormattedMessage></p>
-      <CharacterDialog text=""></CharacterDialog>
+      <CharacterDialog text="a"></CharacterDialog>
     </div>
   )
 }

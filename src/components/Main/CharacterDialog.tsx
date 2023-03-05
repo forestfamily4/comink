@@ -1,42 +1,36 @@
-import { useEffect, Component } from "react"
+import { useEffect, Component, useState } from "react"
 
-type props = {
+type CharacterDialogProps = {
     text: string
 }
 
-class CharacterDialog extends Component {
-    KeyEnterEvent = () => {
+const CharacterDialog = ({ text }: CharacterDialogProps) => {
+    const KeyEnterEvent = () => {
         console.log("thinking")
     }
-    KeySkipEvent = () => {
-        
-    }
-    KeyEnter: boolean = false
-    KeySkip: boolean = false
-    constructor(props: props) {
-        super(props)
-        if(typeof document == 'undefined') return
-        document.addEventListener("keydown", (e) => {
-            this.KeyEnter = e.key === "Shift" || e.key === "x"
-            this.KeySkip = e.key === "z" || e.key === "Enter"
-            if (this.KeyEnter) {
-                this.KeyEnterEvent()
-            }
-            else if (this.KeySkip) {
-                this.KeySkipEvent()
-            }
-        }, false)
-        document.addEventListener("keyup", (e) => {
-            this.KeyEnter = e.key === "Shift" || e.key === "x"
-            this.KeySkip = e.key === "z" || e.key === "Enter"
-        }, false)
-        this.state={props};
-    }
-    render(): React.ReactNode {
-        return (
-            <div>{""}</div>
-        )
-    }
-}
+    const KeySkipEvent = () => {
 
+    }
+    const [KeyEnter, setKeyEnter] = useState(false)
+    const [KeySkip, setKeySkip] = useState(false)
+
+    if (typeof document == 'undefined') return (<div></div>)
+    document.addEventListener("keydown", (e) => {
+        setKeyEnter(e.key === "Shift" || e.key === "x")
+        setKeySkip(e.key === "z" || e.key === "Enter")
+        if (KeyEnter) {
+            KeyEnterEvent()
+        }
+        else if (KeySkip) {
+            KeySkipEvent()
+        }
+    }, false)
+    document.addEventListener("keyup", (e) => {
+        setKeyEnter(e.key === "Shift" || e.key === "x")
+        setKeySkip(e.key === "z" || e.key === "Enter")
+    }, false)
+    return (
+        <div>{text}</div>
+    )
+}
 export default CharacterDialog
